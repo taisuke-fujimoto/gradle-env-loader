@@ -1,0 +1,5 @@
+[libraries]
+# plugin
+kotlin-gradle-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version = "1.8.21" }
+ktlint-gradle = { module = "org.jlleitschuh.gradle:ktlint-gradle", version = "11.3.2" }
+plugin-publish-plugin = { module = "com.gradle.publish:plugin-publish-plugin", version = "1.2.0" }

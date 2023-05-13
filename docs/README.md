@@ -44,11 +44,11 @@ envLoader {
     envFiles(listOf(".env", ".env.<taskName>"))
 
     // the name of the task that loads the environment variables
-    // Plus, the task must implement ProcessForkOptions
+    // plus, the task must implement ProcessForkOptions
     taskNames(setOf("run", "bootRun"))
 
     // a flag that determines the priority of system environment variables and env file environment variables
-    // If true, env file environment variable takes precedence
+    // if true, env file environment variable takes precedence
     overrideSystemEnvironment.set(false)
 }
 ```

@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "xyz.tf.gradle.plugin"
-version = "0.0.1"
+version = "0.0.2"
 
 tasks.jar {
     manifest {

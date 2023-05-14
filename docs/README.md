@@ -41,11 +41,11 @@ envLoader {
     //
     // `<taskName>` will be replaced with the task name
     // i.e. for a `run` task it will be `.env.run`
-    envFiles(listOf(".env", ".env.<taskName>"))
+    envFiles(".env", ".env.<taskName>")
 
     // the name of the task that loads the environment variables
     // plus, the task must implement ProcessForkOptions
-    taskNames(setOf("run", "bootRun"))
+    taskNames("run", "bootRun", "azureFunctionsRun")
 
     // a flag that determines the priority of system environment variables and env file environment variables
     // if true, env file environment variable takes precedence

@@ -12,7 +12,7 @@ import javax.inject.Inject
 
 open class EnvLoaderExtension @Inject constructor(
     objectFactory: ObjectFactory,
-    val projectLayout: ProjectLayout
+    internal val projectLayout: ProjectLayout
 ) {
     internal val envFiles: ListProperty<String> = objectFactory.listProperty { listOf(".env", ".env.<taskName>") }
 
@@ -21,11 +21,31 @@ open class EnvLoaderExtension @Inject constructor(
         envFiles.set(value)
     }
 
-    internal val taskNames: SetProperty<String> = objectFactory.setProperty { setOf("run", "bootRun") }
+    fun envFiles(value: String, vararg remainValues: String) {
+        envFiles.set(
+            buildList {
+                add(value)
+                addAll(remainValues)
+            }
+        )
+    }
+
+    internal val taskNames: SetProperty<String> = objectFactory.setProperty {
+        setOf("run", "bootRun", "azureFunctionsRun")
+    }
 
     fun taskNames(value: Set<String>) {
         require(value.isNotEmpty()) { "[taskNames] must not be empty." }
         taskNames.set(value)
+    }
+
+    fun taskNames(value: String, vararg remainValues: String) {
+        taskNames.set(
+            buildSet {
+                add(value)
+                addAll(remainValues)
+            }
+        )
     }
 
     val overrideSystemEnvironment: Property<Boolean> = objectFactory.property { false }

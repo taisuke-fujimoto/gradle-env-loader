@@ -1,10 +1,11 @@
 plugins {
     id("com.gradle.plugin-publish")
     id("my.kotlin-base")
+    id("my.test-task")
 }
 
 group = "xyz.tf.gradle.plugin"
-version = "0.0.2"
+version = "0.0.1"
 
 tasks.jar {
     manifest {

@@ -22,7 +22,7 @@ class String_parseEnvContent : FreeSpec({
 
         // then
         "check map size" {
-            actual shouldHaveSize 36
+            actual shouldHaveSize 39
         }
         "sets basic environment variable" {
             actual["BASIC"] shouldBe "basic"
@@ -134,6 +134,15 @@ class String_parseEnvContent : FreeSpec({
         }
         "parses keys and values surrounded by spaces" {
             actual["SPACED_KEY"] shouldBe "parsed"
+        }
+        "parses multi-line strings when using double quotes" {
+            actual["MULTI_DOUBLE_QUOTED"] shouldBe "THIS\nIS\nA\nMULTILINE\nSTRING"
+        }
+        "parses multi-line strings when using single quotes" {
+            actual["MULTI_SINGLE_QUOTED"] shouldBe "THIS\nIS\nA\nMULTILINE\nSTRING"
+        }
+        "parses multi-line strings when using backticks" {
+            actual["MULTI_BACKTICKED"] shouldBe "THIS\nIS\nA\n\"MULTILINE'S\"\nSTRING"
         }
     }
 

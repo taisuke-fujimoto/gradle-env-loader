@@ -4,4 +4,4 @@ include(
     "plugin"
 )
 
-project(":plugin").name = "env-loader-plugin"
+project(":plugin").name = "env-loader-gradle-plugin"

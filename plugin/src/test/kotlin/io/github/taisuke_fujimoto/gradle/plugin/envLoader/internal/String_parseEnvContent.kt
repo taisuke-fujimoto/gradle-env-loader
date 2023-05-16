@@ -1,6 +1,6 @@
 @file:Suppress("ClassName")
 
-package xyz.tf.gradle.plugin.envLoader.internal
+package io.github.taisuke_fujimoto.gradle.plugin.envLoader.internal
 
 import io.kotest.core.spec.style.FreeSpec
 import io.kotest.datatest.withData

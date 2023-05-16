@@ -1,11 +1,11 @@
-package xyz.tf.gradle.plugin.envLoader
+package io.github.taisuke_fujimoto.gradle.plugin.envLoader
 
+import io.github.taisuke_fujimoto.gradle.plugin.envLoader.internal.parseEnvContent
 import org.gradle.api.Action
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.Task
 import org.gradle.process.ProcessForkOptions
-import xyz.tf.gradle.plugin.envLoader.internal.parseEnvContent
 
 class EnvLoaderPlugin : Plugin<Project> {
     override fun apply(target: Project) {
@@ -38,9 +38,9 @@ class EnvLoaderPlugin : Plugin<Project> {
                     }
 
                 if (env == null) {
-                    task.logger.warn("Could not read files specified in [envFiles]: $expandedEnvFiles")
+                    task.logger.warn("Could not read files specified in [envFiles]: {}", expandedEnvFiles)
                 } else {
-                    task.logger.trace("apply environment from [envFiles]: $expandedEnvFiles")
+                    task.logger.trace("apply environment from [envFiles]: {}", expandedEnvFiles)
                     env.forEach { (name, value) -> task.environment(name, value) }
                 }
             }

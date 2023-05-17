@@ -9,7 +9,7 @@ A Gradle plugin that loads task runtime environment variables from env files.
    // project_has_task/build.gradle.kts
    
    plugins {
-       id("xyz.tf.env-loader") version "0.0.1"
+       id("io.github.taisuke-fujimoto.env-loader") version "0.0.1"
    
        // as an example, the target task is `run`
        application

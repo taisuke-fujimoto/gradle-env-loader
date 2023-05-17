@@ -2,6 +2,7 @@
 
 [![Gradle Plugin Portal](https://img.shields.io/maven-metadata/v/https/plugins.gradle.org/m2/io/github/taisuke-fujimoto/env-loader-gradle-plugin/maven-metadata.xml.svg?label=Gradle+Plugin+Portal)](https://plugins.gradle.org/plugin/io.github.taisuke-fujimoto.env-loader)
 [![ktlint](https://img.shields.io/badge/code%20style-%E2%9D%A4-FF4081.svg)](https://pinterest.github.io/ktlint/)
+[![lint and test](https://github.com/taisuke-fujimoto/gradle-env-loader/actions/workflows/lint-and-test.yml/badge.svg?event=push)](https://github.com/taisuke-fujimoto/gradle-env-loader/actions/workflows/lint-and-test.yml)
 
 A Gradle plugin that loads task runtime environment variables from env files.
 
@@ -47,7 +48,6 @@ envLoader {
     envFiles(".env", ".env.<taskName>")
 
     // the name of the task that loads the environment variables
-    // plus, the task must implement ProcessForkOptions
     taskNames("run", "bootRun", "azureFunctionsRun")
 
     // a flag that determines the priority of system environment variables and env file environment variables
@@ -59,3 +59,5 @@ envLoader {
 ## Limitations
 
 - The target task must implement [org.gradle.process.ProcessForkOptions](https://docs.gradle.org/current/javadoc/org/gradle/process/ProcessForkOptions.html)
+- It is difficult to control the priority between task's environment variables and env file environment variables,
+  so avoid defining the same environment variables in them.

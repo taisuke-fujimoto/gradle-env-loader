@@ -1,5 +1,8 @@
 # gradle-env-loader
 
+[![Gradle Plugin Portal](https://img.shields.io/maven-metadata/v/https/plugins.gradle.org/m2/io/github/taisuke-fujimoto/env-loader-gradle-plugin/maven-metadata.xml.svg?label=Gradle+Plugin+Portal)](https://plugins.gradle.org/plugin/io.github.taisuke-fujimoto.env-loader)
+[![ktlint](https://img.shields.io/badge/code%20style-%E2%9D%A4-FF4081.svg)](https://pinterest.github.io/ktlint/)
+
 A Gradle plugin that loads task runtime environment variables from env files.
 
 ## How to use

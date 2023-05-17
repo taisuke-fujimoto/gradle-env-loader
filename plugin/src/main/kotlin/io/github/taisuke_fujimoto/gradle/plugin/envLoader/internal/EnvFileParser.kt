@@ -1,4 +1,4 @@
-package xyz.tf.gradle.plugin.envLoader.internal
+package io.github.taisuke_fujimoto.gradle.plugin.envLoader.internal
 
 /**
  * This logic is based on [npm dotenv](https://github.com/motdotla/dotenv)

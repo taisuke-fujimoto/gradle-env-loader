@@ -1,13 +1,13 @@
-package xyz.tf.gradle.plugin.envLoader
+package io.github.taisuke_fujimoto.gradle.plugin.envLoader
 
+import io.github.taisuke_fujimoto.gradle.plugin.envLoader.internal.listProperty
+import io.github.taisuke_fujimoto.gradle.plugin.envLoader.internal.property
+import io.github.taisuke_fujimoto.gradle.plugin.envLoader.internal.setProperty
 import org.gradle.api.file.ProjectLayout
 import org.gradle.api.model.ObjectFactory
 import org.gradle.api.provider.ListProperty
 import org.gradle.api.provider.Property
 import org.gradle.api.provider.SetProperty
-import xyz.tf.gradle.plugin.envLoader.internal.listProperty
-import xyz.tf.gradle.plugin.envLoader.internal.property
-import xyz.tf.gradle.plugin.envLoader.internal.setProperty
 import javax.inject.Inject
 
 open class EnvLoaderExtension @Inject constructor(

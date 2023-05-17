@@ -4,7 +4,7 @@ plugins {
     id("my.test-task")
 }
 
-group = "xyz.tf.gradle.plugin"
+group = "io.github.taisuke-fujimoto"
 version = "0.0.1"
 
 tasks.jar {
@@ -19,11 +19,12 @@ gradlePlugin {
 
     plugins {
         register("envLoader") {
-            id = "xyz.tf.env-loader"
-            implementationClass = "xyz.tf.gradle.plugin.envLoader.EnvLoaderPlugin"
+            id = "io.github.taisuke-fujimoto.env-loader"
             displayName = "env-loader-plugin"
             description = "Load task runtime environment variables from env files."
-            tags.set(setOf("environment variables", "dotenv", "runtime"))
+            tags.set(setOf("environment variables", "dotenv", "runtime", "development"))
+
+            implementationClass = "io.github.taisuke_fujimoto.gradle.plugin.envLoader.EnvLoaderPlugin"
         }
     }
 }

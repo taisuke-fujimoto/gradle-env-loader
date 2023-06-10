@@ -13,10 +13,11 @@ class DefaultConfigurationTest : FreeSpec({
         withData(
             listOf(
                 "run",
-                "bootRun"
+                "bootRun",
+                "azureFunctionsRun"
             )
         ) { taskName ->
-            val projectDir = javaClass.getResource("/$taskName-task")!!.toURI().let(::File)
+            val projectDir = javaClass.getResource("/default-tasks")!!.toURI().let(::File)
 
             // when
             val result = GradleRunner.create()
@@ -31,10 +32,31 @@ class DefaultConfigurationTest : FreeSpec({
 
             val expectedOutput = """
                 VAR1: one
-                VAR2: override VAR2
+                VAR2: overridden from .env.$taskName
                 VAR3: three
             """.trimIndent()
             result.output shouldContainOnlyOnce expectedOutput
         }
+    }
+
+    "`org.springframework.boot` plugin's :bootRun can load environment variables from the env file." {
+        val projectDir = javaClass.getResource("/spring-boot-app")!!.toURI().let(::File)
+
+        // when
+        val result = GradleRunner.create()
+            .withPluginClasspath()
+            .withProjectDir(projectDir)
+            .withArguments("bootRun")
+            .build()
+        println(result.output)
+
+        // then
+        result.task(":bootRun")!!.outcome shouldBe TaskOutcome.SUCCESS
+
+        val expectedOutput = """
+            This is
+            a spring boot application
+        """.trimIndent()
+        result.output shouldContainOnlyOnce expectedOutput
     }
 })

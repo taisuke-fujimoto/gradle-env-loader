@@ -2,6 +2,7 @@ plugins {
     id("com.gradle.plugin-publish")
     id("my.kotlin-base")
     id("my.test-task")
+    id("my.functional-test-task")
 }
 
 group = "io.github.taisuke-fujimoto"

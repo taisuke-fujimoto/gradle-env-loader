@@ -159,8 +159,8 @@ class String_parseEnvContent : FreeSpec({
                 "LF" to "SERVER=localhost\nPASSWORD=password\nDB=tests\n",
                 "CRLF" to "SERVER=localhost\r\nPASSWORD=password\r\nDB=tests\r\n"
             )
-        ) { input ->
-            val actual = input.parseEnvContent()
+        ) { content ->
+            val actual = content.parseEnvContent()
 
             actual shouldContainExactly expected
         }

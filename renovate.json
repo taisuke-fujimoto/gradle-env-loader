@@ -3,5 +3,6 @@
   "extends": [
     "config:base"
   ],
-  "dependencyDashboardApproval": true
+  "dependencyDashboardApproval": true,
+  "ignorePaths": ["plugin/src/**"]
 }

@@ -6,7 +6,7 @@ plugins {
 }
 
 group = "io.github.taisuke-fujimoto"
-version = "0.0.1"
+version = rootProject.file("version.txt").readText().trim()
 
 tasks.jar {
     manifest {

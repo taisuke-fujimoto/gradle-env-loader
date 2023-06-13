@@ -19,3 +19,6 @@ jobs:
 
       - name: test
         run: ./gradlew test
+
+      - name: functional test
+        run: ./gradlew functionalTest

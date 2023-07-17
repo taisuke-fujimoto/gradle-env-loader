@@ -4,6 +4,6 @@
     "config:base"
   ],
   "dependencyDashboardApproval": true,
-  "labels": ["dependencies"],
+  "labels": ["type: dependencies"],
   "ignorePaths": ["plugin/src/**"]
 }
